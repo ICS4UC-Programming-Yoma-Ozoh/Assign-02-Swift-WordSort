@@ -161,36 +161,13 @@ func extractWords(fileName: String) -> [String] {
     return wordList
 }
 
-/// Sorts an array of strings alphabetically using Bubble Sort.
+/// Sorts an array of strings alphabetically.
 ///
 /// - Parameter wordsArray: The unsorted array of words
 /// - Returns: Alphabetically sorted array of words
 func sortWordsAlphabetically(wordsArray: [String]) -> [String] {
-    // Make a mutable copy of the array
-    var sorted = wordsArray
-    // Get total number of words in array
-    let n = sorted.count
-
-    // Only sort if there are at least 2 words
-    if n > 1 {
-        // Outer loop for each sorting pass
-        for i in 0..<(n - 1) {
-            // Inner loop to compare adjacent words
-            for j in 0..<(n - i - 1) {
-                // Check if current word comes after next word
-                if sorted[j] > sorted[j + 1] {
-                    // Store current word temporarily
-                    let temp = sorted[j]
-                    // Move next word to current spot
-                    sorted[j] = sorted[j + 1]
-                    // Place temporary word into next spot
-                    sorted[j + 1] = temp
-                }
-            }
-        }
-    }
-    // Return sorted array
-    return sorted
+    // Use Swift's built-in sorted() function to arrange words from A to Z
+    return wordsArray.sorted()
 }
 
 /// Searches for a target word in a sorted array using binary search.
